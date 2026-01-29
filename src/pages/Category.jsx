@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 const Category = () => {
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
 
     useEffect(() => {
         const getCategories = async () => {
@@ -36,7 +35,7 @@ const Category = () => {
                 <Link
                     to={`/category/${c}`}
                     key={index}
-                    className="btn btn-outline btn-accent m-4"
+                    className="btn btn-outline btn-accent m-4 mb-8"
                 >
                     {c.toUpperCase()}
                 </Link>

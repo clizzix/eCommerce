@@ -2,20 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 
 const Navbar = () => {
-    const [categories, setCategories] = useState([]);
-
-    useEffect(() => {
-        const getCategories = async () => {
-            try {
-                const response = await fetch(
-                    'https://fakestoreapi.com/products/categories',
-                );
-            } catch (error) {}
-        };
-    }, []);
-
     return (
-        <nav className="navbar bg-base-100 shadow-sm">
+        <nav className="navbar bg-base-300 shadow-sm">
             <div className="flex-1">
                 <Link to="/" className="btn btn-ghost text-xl">
                     eCommerce
