@@ -9,6 +9,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchProducts = async () => {
+            setLoading(true);
             try {
                 const response = await fetch(
                     'https://fakestoreapi.com/products',
@@ -20,12 +21,16 @@ const Home = () => {
                 setProducts(data);
             } catch (error) {
                 console.error(error);
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchProducts();
         console.log(products);
     }, []);
+    if (loading) return <div className="text-center mt-10">Loading...</div>;
+
     return (
         <>
             <Category />

@@ -8,6 +8,7 @@ const Category = () => {
 
     useEffect(() => {
         const getCategories = async () => {
+            setLoading(true);
             try {
                 const response = await fetch(
                     'https://fakestoreapi.com/products/categories',
@@ -19,18 +20,23 @@ const Category = () => {
                 setCategories(data);
             } catch (error) {
                 console.error(error);
+            } finally {
+                setLoading(false);
             }
         };
 
         getCategories();
     }, []);
+
+    if (loading) return <div className="text-center mt-10">Loading...</div>;
+
     return (
-        <div>
+        <div className="flex justify-center items-center">
             {categories.map((c, index) => (
                 <Link
                     to={`/category/${c}`}
                     key={index}
-                    className="btn btn-outline btn-primary m-2"
+                    className="btn btn-outline btn-accent m-4"
                 >
                     {c.toUpperCase()}
                 </Link>

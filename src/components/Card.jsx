@@ -2,12 +2,12 @@ import React from 'react';
 
 const Card = ({ product }) => {
     return (
-        <div className="card bg-base-100 w-full h-full shadow-sm">
-            <figure className="px-4 pt-4">
+        <div className="card bg-base-300 border-base-400 w-full h-full shadow-md">
+            <figure>
                 <img
                     src={product.image}
                     alt="Product Image"
-                    className="h-48 w-full object-contain"
+                    className="h-48 w-full object-contain bg-zinc-300"
                 />
             </figure>
             <div className="card-body flex flex-col justify-center items-center">
