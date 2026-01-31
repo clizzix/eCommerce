@@ -6,7 +6,7 @@ import Category from './Category';
 const Home = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const { addToCart } = useOutletContext();
+    const { addToCart, cart, updateQuantity } = useOutletContext();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -45,6 +45,8 @@ const Home = () => {
                         key={product.id}
                         product={product}
                         addToCart={addToCart}
+                        cart={cart}
+                        updateQuantity={updateQuantity}
                     />
                 ))}
             </div>

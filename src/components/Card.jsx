@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Card = ({ product, addToCart }) => {
+const Card = ({ product, addToCart, cart, updateQuantity }) => {
+    const cartItem = cart?.find((item) => item.id === product.id);
+    const quantity = cartItem ? cartItem.quantity || 1 : 0;
+
     return (
         <div className="card bg-base-300 border-base-400 w-full h-full shadow-md">
             <figure>
@@ -28,12 +31,36 @@ const Card = ({ product, addToCart }) => {
                     }).format(product.price)}
                 </p>
                 <div className="card-actions mt-auto">
-                    <button
-                        className="btn btn-primary"
-                        onClick={() => addToCart(product)}
-                    >
-                        Add to Cart
-                    </button>
+                    {quantity > 0 ? (
+                        <div className="flex items-center gap-2">
+                            <button
+                                className="btn btn-sm"
+                                onClick={() =>
+                                    updateQuantity(product.id, quantity - 1)
+                                }
+                            >
+                                -
+                            </button>
+                            <span className="font-bold text-lg">
+                                {quantity}
+                            </span>
+                            <button
+                                className="btn btn-sm"
+                                onClick={() =>
+                                    updateQuantity(product.id, quantity + 1)
+                                }
+                            >
+                                +
+                            </button>
+                        </div>
+                    ) : (
+                        <button
+                            className="btn btn-primary"
+                            onClick={() => addToCart(product)}
+                        >
+                            Add to Cart
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
