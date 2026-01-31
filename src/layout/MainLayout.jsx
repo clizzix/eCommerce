@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router';
 
 const MainLayout = () => {
-    const [counter, setCounter] = useState(0);
     const [cart, setCart] = useState(() => {
         const savedCart = localStorage.getItem('cart');
         return savedCart ? JSON.parse(savedCart) : [];
