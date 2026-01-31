@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import Card from '../components/Card';
+import { useCart } from '../context/CartContext';
 
 const CategoryDetail = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
+    const { addToCart } = useCart();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -38,7 +40,7 @@ const CategoryDetail = () => {
             </button>
             <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-1 gap-6">
                 {products.map((p) => (
-                    <Card key={p.id} product={p} />
+                    <Card key={p.id} product={p} addToCart={addToCart} />
                 ))}
             </div>
         </>

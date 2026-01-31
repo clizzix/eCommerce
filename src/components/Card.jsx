@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-const Card = ({ product }) => {
+const Card = ({ product, addToCart }) => {
     return (
         <div className="card bg-base-300 border-base-400 w-full h-full shadow-md">
             <figure>
@@ -14,7 +15,12 @@ const Card = ({ product }) => {
                 <h2 className="card-title text-center line-clamp-1">
                     {product.title}
                 </h2>
-                <p>{product.category}</p>
+                <Link
+                    to={`/category/${product.category}`}
+                    className="text-secondary hover:underline"
+                >
+                    {product.category}
+                </Link>
                 <p>
                     {new Intl.NumberFormat('de-DE', {
                         style: 'currency',
@@ -22,7 +28,12 @@ const Card = ({ product }) => {
                     }).format(product.price)}
                 </p>
                 <div className="card-actions mt-auto">
-                    <button className="btn btn-primary">Add to Cart</button>
+                    <button
+                        className="btn btn-primary"
+                        onClick={() => addToCart(product)}
+                    >
+                        Add to Cart
+                    </button>
                 </div>
             </div>
         </div>
