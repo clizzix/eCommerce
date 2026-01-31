@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router';
+import { useParams, useNavigate, useOutletContext } from 'react-router';
 import Card from '../components/Card';
-import { useCart } from '../context/CartContext';
 
 const CategoryDetail = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const { addToCart } = useCart();
+    const { addToCart } = useOutletContext();
 
     useEffect(() => {
         const fetchProducts = async () => {

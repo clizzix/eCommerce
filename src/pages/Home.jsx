@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useOutletContext } from 'react-router';
 import Card from '../components/Card';
 import Category from './Category';
-import { useCart } from '../context/CartContext';
 
 const Home = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const { addToCart } = useCart();
+    const { addToCart } = useOutletContext();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -30,6 +30,7 @@ const Home = () => {
         fetchProducts();
         console.log(products);
     }, []);
+
     if (loading) return <div className="text-center mt-10">Loading...</div>;
 
     return (

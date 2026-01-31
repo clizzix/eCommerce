@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router';
-import { useCart } from '../context/CartContext';
 
-const Navbar = () => {
-    const { cart } = useCart();
+const Navbar = ({ cart }) => {
     const totalItems = cart.reduce(
         (acc, item) => acc + (item.quantity || 1),
         0,
