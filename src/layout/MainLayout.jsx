@@ -32,6 +32,10 @@ const MainLayout = () => {
         setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
     };
 
+    const clearCart = () => {
+        setCart([]);
+    };
+
     const updateQuantity = (productId, quantity) => {
         if (quantity < 1) return removeFromCart(productId);
         setCart((prevCart) =>
@@ -51,6 +55,7 @@ const MainLayout = () => {
                         addToCart,
                         removeFromCart,
                         updateQuantity,
+                        clearCart,
                     }}
                 />
             </div>

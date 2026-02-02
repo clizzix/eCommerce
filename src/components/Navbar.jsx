@@ -13,11 +13,11 @@ const Navbar = ({ cart }) => {
                     eCommerce
                 </Link>
             </div>
-            <div className="flex-none">
-                <Link to="/" className="btn btn-accent">
+            <div className="flex-none space-x-4">
+                <Link to="/" className="btn btn-accent font-bold">
                     Home
                 </Link>
-                <Link to="/cart" className="btn btn-ghost btn-circle">
+                <Link to="/cart" className="btn btn-ghost btn-circle mr-4">
                     <div className="indicator">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

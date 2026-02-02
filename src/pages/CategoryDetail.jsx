@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useOutletContext } from 'react-router';
+import { MdArrowBack } from 'react-icons/md';
 import Card from '../components/Card';
 
 const CategoryDetail = () => {
@@ -34,8 +35,11 @@ const CategoryDetail = () => {
 
     return (
         <>
-            <button className="btn btn-ghost mb-4" onClick={() => navigate(-1)}>
-                Back
+            <button
+                className="btn btn-ghost mb-4 text-2xl text-accent font-bold"
+                onClick={() => navigate(-1)}
+            >
+                <MdArrowBack />
             </button>
             <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-1 gap-6">
                 {products.map((p) => (
