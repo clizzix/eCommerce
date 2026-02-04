@@ -1,7 +1,6 @@
 import { useOutletContext } from 'react-router';
-import { MdDeleteOutline } from 'react-icons/md';
 import { useNavigate } from 'react-router';
-import { MdArrowBack } from 'react-icons/md';
+import { MdArrowBack, MdDeleteOutline } from 'react-icons/md';
 
 const Cart = () => {
     const { cart, removeFromCart, updateQuantity, clearCart } =
