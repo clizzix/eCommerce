@@ -1,3 +1,4 @@
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router';
@@ -59,6 +60,7 @@ const MainLayout = () => {
                     }}
                 />
             </div>
+            <Footer />
         </>
     );
 };
