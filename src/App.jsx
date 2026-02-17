@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
-import MainLayout from './layout/Mainlayout';
+import MainLayout from './layout/MainLayout';
 import Home from './pages/Home';
 import CategoryDetail from './pages/CategoryDetail';
 import Cart from './pages/Cart';
