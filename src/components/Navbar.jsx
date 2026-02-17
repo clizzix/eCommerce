@@ -14,7 +14,7 @@ const Navbar = ({ cart }) => {
                 </Link>
             </div>
             <div className="flex-none space-x-4">
-                <Link to="/" className="btn btn-accent font-bold">
+                <Link to="/" className="btn btn-secondary font-bold">
                     Home
                 </Link>
                 <Link to="/cart" className="btn btn-ghost btn-circle mr-4">

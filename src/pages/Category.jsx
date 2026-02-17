@@ -35,7 +35,7 @@ const Category = () => {
                 <Link
                     to={`/category/${c}`}
                     key={index}
-                    className="btn btn-outline btn-accent m-4 mb-8"
+                    className="btn btn-outline btn-primary m-4 mb-8"
                 >
                     {c.toUpperCase()}
                 </Link>

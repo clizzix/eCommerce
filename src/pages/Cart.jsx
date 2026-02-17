@@ -75,17 +75,17 @@ const Cart = () => {
                                     +
                                 </button>{' '}
                                 <button
-                                    className="btn btn-error ml-2 text-2xl"
+                                    className="btn btn-error ml-2"
                                     onClick={() => removeFromCart(item.id)}
                                 >
-                                    <MdDeleteOutline />
+                                    <MdDeleteOutline size={24} />
                                 </button>{' '}
                             </div>
                         </div>
                     ))}
                     <div className="flex flex-row-reverse gap-12 justify-between items-end">
-                        <div className="text-right font-bold text-xl mt-4">
-                            Total:{' '}
+                        <div className="text-right btn btn-success font-bold text-xl mt-4">
+                            Checkout:{' '}
                             {new Intl.NumberFormat('de-DE', {
                                 style: 'currency',
                                 currency: 'EUR',
@@ -96,8 +96,8 @@ const Cart = () => {
                                 className="btn btn-error font-extrabold"
                                 onClick={() => clearCart()}
                             >
-                                <MdDeleteOutline />
-                                Remove all Items
+                                <MdDeleteOutline size={24} />
+                                Clear Cart
                             </button>
                         </div>
                     </div>

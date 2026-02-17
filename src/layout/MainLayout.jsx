@@ -49,7 +49,7 @@ const MainLayout = () => {
     return (
         <>
             <Navbar cart={cart} />
-            <div className="container mx-auto mt-4">
+            <div className="container mx-auto mt-4 min-h-screen">
                 <Outlet
                     context={{
                         cart,
