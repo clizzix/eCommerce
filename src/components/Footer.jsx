@@ -22,7 +22,7 @@ const Footer = () => {
                         reserved
                     </p>
                 </aside>
-                <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+                <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end justify-self-center">
                     <a
                         className="hover:-translate-1 cursor-pointer"
                         href="https://github.com/clizzix"

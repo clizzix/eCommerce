@@ -30,12 +30,12 @@ const Category = () => {
     if (loading) return <div className="text-center mt-10">Loading...</div>;
 
     return (
-        <div className="flex justify-center items-center">
+        <div className="flex overflow-x-auto justify-center w-full p-4 gap-4 mb-8">
             {categories.map((c, index) => (
                 <Link
                     to={`/category/${c}`}
                     key={index}
-                    className="btn btn-outline btn-primary m-4 mb-8"
+                    className="btn btn-outline btn-primary flex-shrink-0"
                 >
                     {c.toUpperCase()}
                 </Link>

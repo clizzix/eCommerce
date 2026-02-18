@@ -9,7 +9,7 @@ const Navbar = ({ cart }) => {
     return (
         <nav className="navbar bg-neutral text-neutral-content shadow-sm">
             <div className="flex-1">
-                <Link to="/" className="btn btn-ghost text-xl">
+                <Link to="/" className="btn btn-ghost text-xl hidden sm:inline">
                     eCommerce
                 </Link>
             </div>
